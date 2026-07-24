@@ -17,7 +17,7 @@ This project simulates that exact situation. Instead of using an already-clean d
 
 ## Dataset
 
-The dataset represents hospital admission records and includes patient demographics, admission and discharge details, clinical information, billing/insurance data, and outcomes — 15,000 rows across 39 columns in total.
+The dataset represents hospital admission records and includes patient demographics, admission and discharge details, clinical information, billing/insurance data, and outcomes 15,000 rows across 39 columns in total.
 
 It covers areas such as:
 

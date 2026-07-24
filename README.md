@@ -1,16 +1,12 @@
 # MediClean: Hospital Admissions Data Cleaning & Analysis
 
-A MySQL data-cleaning and analysis project built on a large, deliberately messy hospital admissions dataset — created to practice and demonstrate real-world data cleaning skills using SQL.
-
----
+A MySQL data-cleaning and analysis project built on a large, deliberately messy hospital admissions dataset created to practice and demonstrate real-world data cleaning skills using SQL.
 
 ## Project Background
 
-Raw, real-world data is almost never ready to analyze straight out of the box. Hospitals, businesses, and organizations collect information from many sources — forms, walk-in registration, different staff entering data in different formats — and the result is usually inconsistent, incomplete, and full of small errors that can quietly distort any analysis built on top of it.
+Raw, real-world data is almost never ready to analyze straight out of the box. Hospitals, businesses, and organizations collect information from many sources forms, walk-in registration, different staff entering data in different formats and the result is usually inconsistent, incomplete, and full of small errors that can quietly distort any analysis built on top of it.
 
 This project simulates that exact situation. Instead of using an already-clean dataset, I built a synthetic hospital admissions dataset of 15,000 patient records across 39 columns, deliberately loaded with the kinds of problems real hospital data actually has: inconsistent formatting, mixed date formats, typos, duplicate records, missing values, and invalid entries. The goal was to take that raw dataset from unusable to analysis-ready using nothing but SQL, and to document the process clearly enough that anyone reviewing it can follow exactly what was wrong and how it was fixed.
-
----
 
 ## Project Goal
 
@@ -19,27 +15,23 @@ This project simulates that exact situation. Instead of using an already-clean d
 - Provide an open, unclean dataset so other learners can practice their own cleaning process on the same data
 - Turn the cleaned data into meaningful insights (patient trends, cost patterns, diagnosis frequency, and more)
 
----
-
 ## Dataset
 
 The dataset represents hospital admission records and includes patient demographics, admission and discharge details, clinical information, billing/insurance data, and outcomes — 15,000 rows across 39 columns in total.
 
 It covers areas such as:
 
-- **Patient demographics** — name, gender, date of birth, age, marital status, occupation, contact details
-- **Location** — city, region, address, postal code
-- **Clinical information** — blood type, chronic condition status, smoker status, allergies, symptoms
-- **Admission details** — admission type, referral source, ward, room, bed type
-- **Care team** — department, attending doctor
-- **Diagnosis & treatment** — diagnosis, diagnosis code, medication prescribed
-- **Lab results** — a recorded lab test value
-- **Billing & insurance** — insurance provider, insurance status, payment method, total cost
-- **Outcome** — discharge status, follow-up requirement, readmission within 30 days
+- **Patient demographics** name, gender, date of birth, age, marital status, occupation, contact details
+- **Location** city, region, address, postal code
+- **Clinical information** blood type, chronic condition status, smoker status, allergies, symptoms
+- **Admission details** admission type, referral source, ward, room, bed type
+- **Care team** department, attending doctor
+- **Diagnosis & treatment** diagnosis, diagnosis code, medication prescribed
+- **Lab results** a recorded lab test value
+- **Billing & insurance** insurance provider, insurance status, payment method, total cost
+- **Outcome** discharge status, follow-up requirement, readmission within 30 days
 
 The raw, unclean version of this dataset is included in this repository so that anyone can attempt their own cleaning process on the same data before comparing it against the approach used here.
-
----
 
 ## Problems Found in the Raw Data
 
@@ -55,8 +47,6 @@ The raw dataset was intentionally built with the following issues, which is what
 - Completely blank rows
 - Admission and discharge dates that were logically impossible (a discharge date earlier than the admission date)
 - Missing values scattered across nearly every column, with no consistent way of marking "unknown"
-
----
 
 ## What Was Cleaned
 
@@ -77,14 +67,10 @@ The cleaning process worked through the dataset systematically, one issue at a t
 
 The full step-by-step SQL used to perform this cleaning is available in this repository for anyone who wants to see the exact logic behind each fix.
 
----
-
 ## Tools Used
 
-- **MySQL** / **MySQL Workbench** — database creation, data cleaning, and querying
-- **Excel** — source format for the raw dataset
-
----
+- **MySQL** / **MySQL Workbench** database creation, data cleaning, and querying
+- **Excel** source format for the raw dataset
 
 ## Repository Structure
 
@@ -95,20 +81,14 @@ The full step-by-step SQL used to perform this cleaning is available in this rep
 ├── analysis_queries.sql                   (queries used to generate insights)
 ```
 
----
-
 ## Key Insights
 
-*(To be added once the analysis stage is complete — patient trends by city, most common diagnoses, average length of stay, cost patterns, and outcome breakdowns.)*
-
----
+*(To be added once the analysis stage is complete patient trends by city, most common diagnoses, average length of stay, cost patterns, and outcome breakdowns.)*
 
 ## Limitations
 
-- Some records had a mismatch between the recorded age and the recorded date of birth. Since it isn't possible to know which of the two values was entered correctly, both were left as-is rather than guessing — a limitation worth noting rather than silently resolving.
+- Some records had a mismatch between the recorded age and the recorded date of birth. Since it isn't possible to know which of the two values was entered correctly, both were left as-is rather than guessing a limitation worth noting rather than silently resolving.
 - Some fields (such as missing lab results or missing costs) were converted to NULL rather than estimated, since inventing values would misrepresent the data rather than clean it.
-
----
 
 ## About This Project
 
